@@ -30,7 +30,7 @@ class PartialParse(object):
 
         else:
             if len(self.stack) != 1:
-                self.dependencies.append(self.stack[-2], self.stack[-1])
+                self.dependencies.append((self.stack[-2], self.stack[-1]))
                 self.stack,pop(-1)
 
     def parse(self, transitions):
