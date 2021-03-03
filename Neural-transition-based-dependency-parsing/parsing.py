@@ -10,7 +10,7 @@ class PartialParse(object):
         """sentence is list of strings"""
         super(PartialParse, self).__init__()
         self.sentence = sentence
-        self.stock = ['ROOT']
+        self.stack = ['ROOT']
         self.buffer = sentence.copy()
         self.dependencies = []
 
@@ -20,18 +20,18 @@ class PartialParse(object):
 
         if transition == 'S':
             if len(self.buffer) != 0:
-                self.stock.append(self.buffer[0])
+                self.stack.append(self.buffer[0])
                 self.buffer.pop(0)
 
         if transition == 'LA':
-            if len(self.stock) != 1 :
-                self.dependencies.append(self.stock[-1], self.stock[-2])
-                self.stock.pop(-2)
+            if len(self.stack) != 1 :
+                self.dependencies.append(self.stack[-1], self.stack[-2])
+                self.stack.pop(-2)
 
         else:
-            if len(self.stock) != 1:
-                self.dependencies.append(self.stock[-2], self.stock[-1])
-                self.stock,pop(-1)
+            if len(self.stack) != 1:
+                self.dependencies.append(self.stack[-2], self.stack[-1])
+                self.stack,pop(-1)
 
     def parse(self, transitions):
         """apply the parse_step for all the given transitions"""
