@@ -16,7 +16,7 @@ import torch
 from tqdm import tqdm
 
 from transition_model import ParserModel
-from utils.parser_utils import minibatches, load_and_preprocess_data, AverageMeter
+from Utils.parser_utils import minibatches, load_and_preprocess_data, AverageMeter
 
 # -----------------
 # Primary Functions
