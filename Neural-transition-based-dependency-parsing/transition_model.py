@@ -26,7 +26,7 @@ class ParserModel(nn.Module):
     def embedding_lookup(self, t):
         """t is the input tokens (integer)"""
         embedding = self.pretrained_embeddings(t)
-        print("shape of input tokens in 'embedding_lookup':",t.shape)
+        #print("shape of input tokens in 'embedding_lookup':",t.shape)
         x = embedding.view(t.shape[0], self.n_features*self.embed_size)
 
         return x
