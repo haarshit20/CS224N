@@ -32,7 +32,7 @@ class ParserModel(nn.Module):
         return x
 
     def forward(self, x):
-        x = embedding_lookup(x)
+        x = self.embedding_lookup(x)
         x = F.relu(self.embed_to_hidden(x))
         x = self.dropout(x)
         x = self.hidden_to_logits(x)
