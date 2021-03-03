@@ -23,7 +23,7 @@ class PartialParse(object):
                 self.stock.append(self.buffer[0])
                 self.buffer.pop(0)
 
-        if transition = 'LA':
+        if transition == 'LA':
             if len(self.stock) != 1 :
                 self.dependencies.append(self.stock[-1], self.stock[-2])
                 self.stock.pop(-2)
