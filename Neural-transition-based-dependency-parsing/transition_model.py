@@ -10,7 +10,7 @@ class ParserModel(nn.Module):
         super(ParserModel, self).__init__()
 
         self.embed_size = embeddings.shape[0]
-        self.pretrained_embeddings = nn.Embedding(embeddings.shape[0],embedding.shape[1])
+        self.pretrained_embeddings = nn.Embedding(embeddings.shape[0],embeddings.shape[1])
         self.pretrained_embeddings.weight = nn.Parameter(torch.tensor(embeddings))
         self.n_features = n_features
         self.hidden_size = hidden_size
