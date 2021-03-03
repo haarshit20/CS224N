@@ -25,7 +25,7 @@ class PartialParse(object):
 
         if transition == 'LA':
             if len(self.stack) != 1 :
-                self.dependencies.append(self.stack[-1], self.stack[-2])
+                self.dependencies.append((self.stack[-1], self.stack[-2]))
                 self.stack.pop(-2)
 
         else:
